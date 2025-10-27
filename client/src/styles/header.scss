@@ -1,0 +1,57 @@
+.header {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: color-mix(in oklab, var(--sidebar-border) 80%, transparent);
+
+  &__wrapper {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--spacing) * 4);
+    justify-content: space-between;
+    @media (width >= 48rem /* 768px */) {
+      max-width: 80rem /* 80rem = 1280px */;
+    }
+  }
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+  &__logo {
+    height: 48px;
+    width: auto;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(
+        calc(var(--spacing) * 6) /* 1.5rem = 24px */ * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        calc(var(--spacing) * 6) /* 1.5rem = 24px */ *
+          calc(1 - var(--tw-space-x-reverse))
+      );
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(
+        calc(var(--spacing) * 2) /* 0.5rem = 8px */ * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        calc(var(--spacing) * 2) /* 0.5rem = 8px */ *
+          calc(1 - var(--tw-space-x-reverse))
+      );
+    }
+    gap: 0.5rem;
+    .ant-btn-icon {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.preloader {
+  position: fixed;
+  background-color: #fff;
+  inset: calc(var(--spacing) * 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}

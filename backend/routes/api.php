@@ -17,3 +17,12 @@ Route::middleware('auth:sanctum')->group(function () {
     // Form routes
     Route::apiResource('forms', FormController::class);
 });
+
+Route::fallback(function () {
+    return response()->json([
+        'data' => [],
+        'success' => false,
+        'status' => 404,
+        'message' => 'Invalid Route'
+    ]);
+});
